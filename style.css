@@ -548,7 +548,69 @@ a:hover { color: var(--color-primary-dark); }
   font-size: 0.85rem;
   margin: 0;
 }
+/* ============ قائمة التواصل في التذييل ============ */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.9rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.member-name {
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.member-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.member-contact a {
+  color: #c9d8cd;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.member-contact a:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.member-contact .wa-link {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  color: #c9d8cd;
+}
+
+.member-contact .wa-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
 /* ============ التجاوب ============ */
 @media (max-width: 900px) {
   .importance-grid {
