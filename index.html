@@ -24,7 +24,6 @@
           <li><a href="#waste">أين تُهدَر؟</a></li>
           <li><a href="#steps">خطوات عملية</a></li>
           <li><a href="#renewable">الطاقة المتجددة</a></li>
-          <li><a href="#calculator">الحاسبة</a></li>
           <li><a href="#myths">حقائق وخرافات</a></li>
           <li><a href="#initiative">مبادرتنا</a></li>
           <li><a href="#sources">المصادر</a></li>
@@ -45,18 +44,18 @@
     </section>
 
     <!-- 2. لماذا نرشّد الطاقة؟ -->
-    <section id="why" class="section">
+    <section id="why" class="section section-why">
       <div class="container">
         <h2>لماذا نرشّد الطاقة؟</h2>
         <div class="text-block">
           <p>معظم الكهرباء في مصر تُنتَج من مصادر غير متجددة، وحين نستهلك أكثر من حاجتنا فإننا نضغط على هذه المصادر وعلى الشبكة الكهربائية في الوقت نفسه.</p>
-          <p>الترشيد ليس إجراءً موقتاً للأزمات، بل سلوك يومي يقلّل الفاتورة ويؤخّر الحاجة إلى محطات جديدة، ويترك موارد للأجيال القادمة.</p>
+          <p>الترشيد ليس إجراءً مؤقتاً للأزمات، بل سلوك يومي يقلّل الفاتورة ويؤخّر الحاجة إلى محطات جديدة، ويترك موارد للأجيال القادمة.</p>
         </div>
       </div>
     </section>
 
     <!-- 3. الأهمية -->
-    <section id="importance" class="section section-alt">
+    <section id="importance" class="section section-importance">
       <div class="container">
         <h2>الأهمية</h2>
         <div class="importance-grid">
@@ -77,7 +76,7 @@
     </section>
 
     <!-- 4. أين تُهدَر الطاقة؟ -->
-    <section id="waste" class="section">
+    <section id="waste" class="section section-waste">
       <div class="container">
         <h2>أين تُهدَر الطاقة؟</h2>
         <p class="intro">أمثلة متكررة في المنزل والمدرسة، يمكن ملاحظتها بسهولة:</p>
@@ -123,7 +122,7 @@
     </section>
 
     <!-- 5. خطوات عملية -->
-    <section id="steps" class="section section-alt">
+    <section id="steps" class="section section-steps">
       <div class="container">
         <h2>خطوات عملية</h2>
         <ol class="steps-list">
@@ -139,7 +138,7 @@
     </section>
 
     <!-- 6. الطاقة المتجددة -->
-    <section id="renewable" class="section">
+    <section id="renewable" class="section section-renewable">
       <div class="container">
         <h2>الطاقة المتجددة</h2>
         <div class="renewable-layout">
@@ -150,9 +149,8 @@
             <p>تعتمد على توربينات تدور بفعل الرياح لتوليد الكهرباء. مناطق مثل خليج السويس والزعفرانة تُعدّ من أفضل المواقع في مصر لهذا النوع من الطاقة.</p>
           </div>
           <div class="renewable-visual">
-            <!-- مساحة مخصصة لرسم SVG بسيط -->
             <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="svg-illustration" role="img" aria-label="رسم توضيحي مبسّط للطاقة المتجددة">
-              <rect x="0" y="0" width="300" height="200" fill="#f4f6f4"/>
+              <rect x="0" y="0" width="300" height="200" fill="#eef4ec"/>
               <circle cx="60" cy="60" r="25" fill="none" stroke="#1f5e3a" stroke-width="3"/>
               <line x1="60" y1="35" x2="60" y2="10" stroke="#1f5e3a" stroke-width="3"/>
               <line x1="85" y1="60" x2="110" y2="60" stroke="#1f5e3a" stroke-width="3"/>
@@ -169,48 +167,8 @@
       </div>
     </section>
 
-    <!-- 7. حاسبة الاستهلاك -->
-    <section id="calculator" class="section section-alt">
-      <div class="container">
-        <h2>حاسبة استهلاك بسيطة</h2>
-        <p class="intro">أدخل بيانات الأجهزة لمعرفة الاستهلاك الشهري التقريبي والتوفير المحتمل.</p>
-
-        <form id="calc-form" class="calc-form">
-          <div class="calc-row">
-            <label for="device-name">اسم الجهاز</label>
-            <input type="text" id="device-name" placeholder="مثال: مكيف" required>
-          </div>
-          <div class="calc-row">
-            <label for="device-power">القدرة (واط)</label>
-            <input type="number" id="device-power" min="1" placeholder="مثال: 1500" required>
-          </div>
-          <div class="calc-row">
-            <label for="device-hours">ساعات التشغيل اليومية</label>
-            <input type="number" id="device-hours" min="0" max="24" step="0.5" placeholder="مثال: 6" required>
-          </div>
-          <div class="calc-row">
-            <label for="device-count">عدد الأجهزة</label>
-            <input type="number" id="device-count" min="1" value="1" required>
-          </div>
-          <button type="submit" class="btn">أضف الجهاز</button>
-        </form>
-
-        <div class="calc-results">
-          <h3>الأجهزة المضافة</h3>
-          <ul id="device-list" class="device-list">
-            <li class="empty-msg">لم تُضف أي أجهزة بعد.</li>
-          </ul>
-          <div class="calc-summary">
-            <p>الاستهلاك الشهري التقريبي: <strong id="total-monthly">0</strong> كيلوواط/ساعة</p>
-            <p>التوفير عند تقليل ساعة واحدة يومياً: <strong id="total-savings">0</strong> كيلوواط/ساعة شهرياً</p>
-          </div>
-          <button type="button" id="reset-calc" class="btn btn-outline">إعادة التعيين</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. حقائق وخرافات -->
-    <section id="myths" class="section">
+    <!-- 7. حقائق وخرافات -->
+    <section id="myths" class="section section-myths">
       <div class="container">
         <h2>حقائق وخرافات</h2>
         <div class="myths-list">
@@ -238,8 +196,8 @@
       </div>
     </section>
 
-    <!-- 9. مبادرتنا -->
-    <section id="initiative" class="section section-alt">
+    <!-- 8. مبادرتنا -->
+    <section id="initiative" class="section section-initiative">
       <div class="container">
         <h2>مبادرتنا</h2>
         <div class="initiative-content">
@@ -255,8 +213,8 @@
       </div>
     </section>
 
-    <!-- 10. المصادر والمراجع -->
-    <section id="sources" class="section">
+    <!-- 9. المصادر والمراجع -->
+    <section id="sources" class="section section-sources">
       <div class="container">
         <h2>المصادر والمراجع</h2>
         <ul class="sources-list">
@@ -271,7 +229,6 @@
 
   </main>
 
-  <!-- 11. التذييل -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-col">
