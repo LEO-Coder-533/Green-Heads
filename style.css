@@ -1,0 +1,484 @@
+/* ============ إعدادات عامة ============ */
+:root {
+  --color-primary: #1f5e3a;
+  --color-primary-dark: #16462c;
+  --color-text: #2b2b2b;
+  --color-text-light: #5a5a5a;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f6f4;
+  --color-border: #dcdcdc;
+  --max-width: 1100px;
+  --spacing: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary-dark);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; color: var(--color-text); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover { color: var(--color-primary-dark); }
+
+/* ============ الهيدر ============ */
+.site-header {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--color-primary-dark);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* زر القائمة للموبايل */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+/* ============ الأقسام ============ */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.intro {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* ============ الرئيسية ============ */
+.hero {
+  padding: 5rem 0 4rem;
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+/* ============ الأزرار ============ */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ============ الأهمية ============ */
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.importance-item {
+  border-right: 3px solid var(--color-primary);
+  padding-right: 1rem;
+}
+
+/* ============ الجدول ============ */
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.waste-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.waste-table th,
+.waste-table td {
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  text-align: right;
+  font-size: 0.95rem;
+}
+
+.waste-table th {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+/* ============ خطوات عملية ============ */
+.steps-list {
+  padding-right: 1.5rem;
+  counter-reset: step;
+}
+
+.steps-list li {
+  margin-bottom: 0.75rem;
+  padding-right: 0.5rem;
+}
+
+/* ============ الطاقة المتجددة ============ */
+.renewable-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.renewable-visual {
+  text-align: center;
+}
+
+.svg-illustration {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border: 1px solid var(--color-border);
+}
+
+.placeholder-note {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+}
+
+/* ============ الحاسبة ============ */
+.calc-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.calc-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calc-row label {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.calc-row input {
+  font-family: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+.calc-row input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.calc-results {
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.device-list {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.device-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.device-list .empty-msg {
+  color: var(--color-text-light);
+  border-bottom: none;
+}
+
+.calc-summary {
+  margin: 1rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.calc-summary strong {
+  color: var(--color-primary-dark);
+}
+
+/* ============ الخرافات ============ */
+.myths-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.myth-item {
+  border-right: 3px solid var(--color-primary);
+  padding-right: 1rem;
+}
+
+.myth-item .label {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.myth-item .myth {
+  color: var(--color-text-light);
+  margin-bottom: 0.35rem;
+}
+
+.myth-item .fact {
+  margin-bottom: 0;
+}
+
+/* ============ المبادرتنا ============ */
+.initiative-list {
+  padding-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.initiative-list li {
+  margin-bottom: 0.6rem;
+}
+
+.editable-note {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+/* ============ المصادر ============ */
+.sources-list {
+  list-style: none;
+}
+
+.sources-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.sources-list li::before {
+  content: "—";
+  color: var(--color-primary);
+  margin-left: 0.5rem;
+}
+
+/* ============ التذييل ============ */
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: #e8efe9;
+  padding: 2.5rem 0 0;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.footer-col p {
+  color: #c9d8cd;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer-bottom p {
+  color: #c9d8cd;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ============ التجاوب ============ */
+@media (max-width: 900px) {
+  .calc-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .importance-grid {
+    grid-template-columns: 1fr;
+  }
+  .renewable-layout {
+    grid-template-columns: 1fr;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 1.25rem;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .calc-form {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
