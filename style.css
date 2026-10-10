@@ -231,6 +231,17 @@ a:hover { color: var(--color-primary-dark); }
   background-size: 22px 22px;
 }
 
+.section-climate {
+  background-color: var(--color-bg);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 39px,
+    rgba(31, 94, 58, 0.05) 39px,
+    rgba(31, 94, 58, 0.05) 40px
+  );
+}
+
 .section-myths {
   background-color: var(--color-bg-sand);
 }
@@ -312,7 +323,7 @@ a:hover { color: var(--color-primary-dark); }
   font-weight: 700;
 }
 
-/* ============ الطاقة المتجددة ============ */
+/* ============ إعادة التدوير ============ */
 .renewable-layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -328,18 +339,7 @@ a:hover { color: var(--color-primary-dark); }
   display: block;
 }
 
-/* ============ التغير المناخي: الأسباب ============ */
-.section-climate {
-  background-color: var(--color-bg);
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent 0,
-    transparent 39px,
-    rgba(31, 94, 58, 0.05) 39px,
-    rgba(31, 94, 58, 0.05) 40px
-  );
-}
-
+/* ============ الأثر البيئي ============ */
 .climate-causes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -364,48 +364,6 @@ a:hover { color: var(--color-primary-dark); }
 .cause-item p {
   margin-bottom: 0;
   font-size: 0.95rem;
-}
-
-/* ============ التغير المناخي: الحلول ============ */
-.section-solutions {
-  background-color: var(--color-bg-cream);
-}
-
-.solutions-layout {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.solutions-block h3 {
-  border-bottom: 2px solid var(--color-primary);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.solutions-list {
-  padding-right: 1.25rem;
-}
-
-.solutions-list li {
-  margin-bottom: 0.55rem;
-  font-size: 0.95rem;
-}
-
-.solutions-list li::marker {
-  color: var(--color-primary);
-}
-
-.climate-quote {
-  background-color: #fff;
-  border-right: 4px solid var(--color-primary);
-  padding: 1.25rem 1.5rem;
-  font-size: 1.05rem;
-  color: var(--color-primary-dark);
-  border-radius: 4px;
-  max-width: 800px;
 }
 
 /* ============ الخرافات ============ */
@@ -548,15 +506,15 @@ a:hover { color: var(--color-primary-dark); }
   font-size: 0.85rem;
   margin: 0;
 }
+
 /* ============ قائمة التواصل في التذييل ============ */
 .contact-list {
   list-style: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 0.25rem;
-  flex-wrap: wrap;
-  text-align: center;
 }
 
 .contact-list li {
@@ -611,6 +569,82 @@ a:hover { color: var(--color-primary-dark); }
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.5);
 }
+
+/* ============ زر الرجوع لأعلى ============ */
+.back-to-top {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
+  z-index: 200;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+}
+/* ============ حقائق وخرافات: الصف العلوي مع الصورة ============ */
+.myths-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
+}
+
+.myths-list-top {
+  margin: 0;
+}
+.myths-list-top article{
+  height: 100%;
+}
+.myths-image {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.myths-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+/* في الموبايل: الصورة تحت العنصرين */
+@media (max-width: 900px) {
+  .myths-top-row {
+    grid-template-columns: 1fr;
+  }
+  .myths-image img {
+    height: auto;
+  }
+}
 /* ============ التجاوب ============ */
 @media (max-width: 900px) {
   .importance-grid {
@@ -620,9 +654,6 @@ a:hover { color: var(--color-primary-dark); }
     grid-template-columns: 1fr;
   }
   .climate-causes {
-    grid-template-columns: 1fr;
-  }
-  .solutions-layout {
     grid-template-columns: 1fr;
   }
   .footer-inner {
@@ -664,10 +695,17 @@ a:hover { color: var(--color-primary-dark); }
   }
 
   .section {
-    padding: 2.5rem 0;
+    padding: 3.5rem 0;
   }
 
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .back-to-top {
+    left: 1rem;
+    bottom: 1rem;
+    width: 40px;
+    height: 40px;
   }
 }
